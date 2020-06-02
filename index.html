@@ -18,6 +18,7 @@
       left: 0;
       top: 0;
       pointer-events: none;
+      z-index: -1;
     }
   </style>
 </head>
@@ -27,7 +28,7 @@
   <script>
     let myRainbow = new Rainbow({
       max_age : 2000,
-      max_count : 1000,
+      part_count : 1000,
       frame_rate : 1,
       top_left_color : 'rgb(204,0,255)',
       top_right_color : 'rgb(0,255,255)',

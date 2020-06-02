@@ -1,10 +1,9 @@
-
 let rainbow_viewWidth = document.body.clientWidth;
 let rainbow_viewHeight = document.body.clientHeight;
 class Rainbow {
   constructor(settings) {
     this.max_age = settings && settings.max_age || 2000;
-    this.max_count = settings && settings.max_count || 1000;
+    this.part_count = settings && settings.part_count || 1000;
     this.frame_rate = settings && settings.frame_rate || 1;
     this.top_left_color = settings && settings.top_left_color || 'rgb(204,0,255)';
     this.top_right_color = settings && settings.top_right_color || 'rgb(0,255,255)';
@@ -25,7 +24,7 @@ class Rainbow {
     this.ctx.lineWidth = 1;
     this.ctx.globalAlpha = 0.95;
 
-    for(let i=0; i<this.max_count; i++){
+    for(let i=0; i<this.part_count; i++){
       this.array_top_left.push(new particle_top_left(this.max_age));
       this.array_top_right.push(new particle_top_right(this.max_age));
       this.array_bottom_left.push(new particle_bottom_left(this.max_age));
