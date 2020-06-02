@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow particles</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom right, rgb(9, 27, 53), rgb(65, 11, 72));
+    }
+    #canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script src="./main.js"></script>
+  <script>
+    let myRainbow = new Rainbow({
+      max_age : 2000,
+      max_count : 1000,
+      frame_rate : 1,
+      top_left_color : 'rgb(204,0,255)',
+      top_right_color : 'rgb(0,255,255)',
+      bottom_left_color : 'rgb(255,112,12)',
+      bottom_right_color : 'rgb(255,10,130)'
+    })
+    myRainbow.init();
+    // 以上参数都是可以自行调配的，使用默认配置的参数可以不写，如果全默认，则不用传参直接使用下面两句代码
+    // let myRainbow = new Rainbow();
+    // myRainbow.init();
+  </script>
+</body>
+</html>
